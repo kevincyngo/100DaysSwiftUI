@@ -294,12 +294,13 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number].0.lowercased()).resizable()
-                            .renderingMode(.original)
-                            .clipShape(Rectangle())
-                            .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 0)
-                            .frame(width:250, height: 150)
+                        FlagImage(image: self.countries[number].0.lowercased())
+//                        Image(self.countries[number].0.lowercased()).resizable()
+//                            .renderingMode(.original)
+//                            .clipShape(Rectangle())
+//                            .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
+//                            .shadow(color: .black, radius: 0)
+//                            .frame(width:250, height: 150)
                     }
                 }
                 
@@ -335,13 +336,27 @@ struct ContentView: View {
             askQuestions()
         } else {
             scoreTitle = "Incorrect"
-            score = 0
             incorrectAnswer = number
             showingScore = true
+            score = 0
         }
+        
         
     }
 }
+
+struct FlagImage: View {
+    var image: String
+    var body: some View {
+        Image(image).resizable()
+            .renderingMode(.original)
+            .clipShape(Rectangle())
+            .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
+            .shadow(color: .black, radius: 0)
+            .frame(width:250, height: 150)
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
