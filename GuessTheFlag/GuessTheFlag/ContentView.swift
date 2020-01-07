@@ -269,7 +269,7 @@ struct ContentView: View {
     ].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
-    
+    @State private var incorrectAnswer = 0
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var score = 0
@@ -296,19 +296,22 @@ struct ContentView: View {
                     }) {
                         Image(self.countries[number].0.lowercased()).resizable()
                             .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
-                            .frame(width:250, height: 175)
+                            .clipShape(Rectangle())
+                            .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
+                            .shadow(color: .black, radius: 0)
+                            .frame(width:250, height: 150)
                     }
                 }
                 
                 Spacer()
+                Text("Score: \(String(score))")
+                    .foregroundColor(.white)
+                    .fontWeight(.black)
             }
         }
         .alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle),
-                  message: Text("Your score is \(String(score))."),
+                  message: Text("That's the flag of \(String(countries[incorrectAnswer].1))"),
                   dismissButton: .default(Text("Continue")) {
                     self.askQuestions()
                 })
@@ -326,14 +329,17 @@ struct ContentView: View {
     }
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
-            scoreTitle = "Correct"
+//            scoreTitle = "Correct"
             score += 1
+            showingScore = false
+            askQuestions()
         } else {
             scoreTitle = "Incorrect"
-            score -= 1
+            score = 0
+            incorrectAnswer = number
+            showingScore = true
         }
         
-        showingScore = true
     }
 }
 
