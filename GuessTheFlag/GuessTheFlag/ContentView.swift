@@ -274,6 +274,12 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var score = 0
     
+    
+    //states for animation
+    @State private var flagAngle = [0.0, 0.0, 0.0]
+    @State private var flagOpacity = [1.0, 1.0, 1.0]
+    @State private var flagBlur: [CGFloat] = [0, 0, 0]
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]),
@@ -295,13 +301,11 @@ struct ContentView: View {
                         self.flagTapped(number)
                     }) {
                         FlagImage(image: self.countries[number].0.lowercased())
-//                        Image(self.countries[number].0.lowercased()).resizable()
-//                            .renderingMode(.original)
-//                            .clipShape(Rectangle())
-//                            .overlay(Rectangle().stroke(Color.black, lineWidth: 1))
-//                            .shadow(color: .black, radius: 0)
-//                            .frame(width:250, height: 150)
                     }
+                    .rotation3DEffect(.degrees(self.flagAngle[number]), axis:(x:0, y:1, z:0))
+                    .opacity(self.flagOpacity[number])
+                    .blur(radius: self.flagBlur[number])
+                    .animation(.default)
                 }
                 
                 Spacer()
@@ -325,7 +329,11 @@ struct ContentView: View {
     
     func askQuestions() {
         countries.shuffle()
+//        flagAngle = [0.0, 0.0, 0.0]
+        flagOpacity = [1.0, 1.0, 1.0]
+        flagBlur = [0.0, 0.0, 0.0]
         correctAnswer = Int.random(in: 0...2)
+        
         
     }
     func flagTapped(_ number: Int) {
@@ -333,15 +341,39 @@ struct ContentView: View {
 //            scoreTitle = "Correct"
             score += 1
             showingScore = false
+//            animateCorrectAnswer()
             askQuestions()
         } else {
             scoreTitle = "Incorrect"
             incorrectAnswer = number
             showingScore = true
             score = 0
+            animateGuess()
         }
         
         
+    }
+    
+//    func animateCorrectAnswer() {
+//        for flag in 0...2 {
+//            if flag == correctAnswer {
+//                flagAngle[flag] = 360.0
+//            } else {
+////                flagOpacity[flag] = 0.25
+//            }
+//        }
+//    }
+    
+    func animateGuess() {
+        //only animate when we get answer wrong
+        for flag in 0...2 {
+            if flag != correctAnswer {
+                flagBlur[flag] = 6
+                flagOpacity[flag] = 0.25
+            } else {
+                flagAngle[flag] += 360.0
+            }
+        }
     }
 }
 
