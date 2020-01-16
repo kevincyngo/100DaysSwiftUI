@@ -12,6 +12,7 @@ struct MultiplicationView: View {
     @Binding var numQuestions: Int
     @State var multiplicationFactor: Int
     var body: some View {
+        Group {
         VStack {
             Text("Questions Remaining: \(numQuestions)")
             Text("Multiplication Factor: \(multiplicationFactor)")
@@ -20,6 +21,8 @@ struct MultiplicationView: View {
             }) {
                 Text("chng")
             }
+        }
+            Spacer()
         }
     }
     

@@ -8,47 +8,51 @@
 
 import SwiftUI
 
+extension UIScreen{
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    static let screenSize = UIScreen.main.bounds.size
+}
 
 struct ContentView: View {
     @State private var numQuestions = 0
     
     var body: some View {
-            NavigationView {
-                VStack{
-                Text("Learn Multiplication")
-                    .font(.title)
+        
+        NavigationView {
+            VStack{
+                Stepper(value: $numQuestions, in: 0...50, label: { Text("Questions:  \(numQuestions)")}).padding(60).font(.title)
 
-                Stepper("Enter number of questions", value: $numQuestions, in: 0 ... 50)
-                    .padding()
-
-                Text("\(numQuestions) Questions")
-                    .padding(.bottom, 50)
                 
-                
-                VStack {
+                VStack(spacing:0) {
                     ForEach(0 ..< 4) { row in
-                        HStack {
+                        HStack(spacing: 0) {
                             ForEach(0 ..< 4) { column in
                                 NavigationLink(destination: MultiplicationView(numQuestions: self.$numQuestions, multiplicationFactor: (row*4 + column))) {
-                                        Text("\(row*4 + column)")
-                                            .frame(width: 75, height: 75)
-                                            
-                                            .background(Color.yellow)
-                                            .padding()
-                                            
-                                            .font(.largeTitle)
-                                    .cornerRadius(40)
+                                    Text("\(row*4 + column)")
+                                        .frame(width: UIScreen.screenWidth/4)
+                                        .background(Color.yellow)
+                                        
+                                        .font(.largeTitle)
+                                    
                                 }
-
+                                
+                                
                                 
                                 
                             }
                         }
                     }
+                .padding()
+                    .background(Color.red)
                 }
                 Spacer()
-                }
+                
             }
+            .navigationBarTitle("Learn Multiplication", displayMode: .inline)
+        }
+        
+        
     }
 }
 
