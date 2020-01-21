@@ -17,6 +17,7 @@
 		F0842ED523D6B0D300BCCCD9 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = F0842ED423D6B0D300BCCCD9 /* missions.json */; };
 		F0842ED723D6B11700BCCCD9 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0842ED623D6B11700BCCCD9 /* Astronaut.swift */; };
 		F0842ED923D6B15A00BCCCD9 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0842ED823D6B15A00BCCCD9 /* Bundle-Decodable.swift */; };
+		F0842EDB23D6B32000BCCCD9 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0842EDA23D6B32000BCCCD9 /* Mission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F0842ED423D6B0D300BCCCD9 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		F0842ED623D6B11700BCCCD9 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		F0842ED823D6B15A00BCCCD9 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		F0842EDA23D6B32000BCCCD9 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				F0842EC223D691BB00BCCCD9 /* ContentView.swift */,
 				F0842ED623D6B11700BCCCD9 /* Astronaut.swift */,
 				F0842ED823D6B15A00BCCCD9 /* Bundle-Decodable.swift */,
+				F0842EDA23D6B32000BCCCD9 /* Mission.swift */,
 				F0842EC423D691BE00BCCCD9 /* Assets.xcassets */,
 				F0842EC923D691BE00BCCCD9 /* LaunchScreen.storyboard */,
 				F0842ECC23D691BE00BCCCD9 /* Info.plist */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0842EDB23D6B32000BCCCD9 /* Mission.swift in Sources */,
 				F0842EBF23D691BB00BCCCD9 /* AppDelegate.swift in Sources */,
 				F0842EC123D691BB00BCCCD9 /* SceneDelegate.swift in Sources */,
 				F0842ED923D6B15A00BCCCD9 /* Bundle-Decodable.swift in Sources */,
