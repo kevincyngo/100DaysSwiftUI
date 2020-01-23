@@ -18,16 +18,35 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(activities.items) { item in
-                    NavigationLink(destination: DetailsView(activities: self.activities, activity: item)) {
+                    NavigationLink(destination: DetailsView(activities: self.activities, activity: item, comments: item.comments)) {
                         HStack{
                             VStack{
+                                HStack {
                                 Text(item.title)
                                     .font(.headline)
-                                Text(item.description)
+                                    
+                                Text("(")
+                                    .font(.subheadline)
+                                   
+                                Text("\(item.comments.count)")
                                     .foregroundColor(.secondary)
+                                    .font(.subheadline)
+                                    
+                                Text(")")
+                                    .font(.subheadline)
+                                Spacer()
+                                }
+                                HStack {
+                                    Text(item.description)
+                                        .foregroundColor(.secondary)
+                                    
+                                    Spacer()
+                                }
+
+                                
                             }
                             Spacer()
-                            Text("\(item.completed)")
+//                            Text("\(item.completed)")
                             
                         }
 
