@@ -14,8 +14,6 @@ struct Activity: Identifiable, Codable, Equatable {
     let description: String
     var comments: [String] = []
     
-    var completed: Int = 0
-    
     static func == (lhs: Activity, rhs: Activity) -> Bool {
         return lhs.title == rhs.title
     }

@@ -22,19 +22,19 @@ struct ContentView: View {
                         HStack{
                             VStack{
                                 HStack {
-                                Text(item.title)
-                                    .font(.headline)
+                                    Text(item.title)
+                                        .font(.headline)
                                     
-                                Text("(")
-                                    .font(.subheadline)
-                                   
-                                Text("\(item.comments.count)")
-                                    .foregroundColor(.secondary)
-                                    .font(.subheadline)
+                                    Text("(")
+                                        .font(.subheadline)
                                     
-                                Text(")")
-                                    .font(.subheadline)
-                                Spacer()
+                                    Text("\(item.comments.count)")
+                                        .foregroundColor(.secondary)
+                                        .font(.subheadline)
+                                    
+                                    Text(")")
+                                        .font(.subheadline)
+                                    Spacer()
                                 }
                                 HStack {
                                     Text(item.description)
@@ -42,32 +42,30 @@ struct ContentView: View {
                                     
                                     Spacer()
                                 }
-
+                                
                                 
                             }
                             Spacer()
-//                            Text("\(item.completed)")
                             
                         }
-
-
                     }
                 }
                 .onDelete(perform: removeItems)
             }
             .navigationBarTitle("Activities")
             .navigationBarItems(
-                leading: EditButton(),
+                leading: EditButton().font(.title).padding(),
                 trailing:
-                    Button(action: {
-                        self.showingAddActivity = true
-                    }) {
-                        Image(systemName: "plus")
-                            .padding()
-                    }
+                Button(action: {
+                    self.showingAddActivity = true
+                }) {
+                    Text("+")
+                        .padding()
+                        .font(.title)
+                }
             )
-            .sheet(isPresented: $showingAddActivity) {
-                AddActivityView(activities: self.activities)
+                .sheet(isPresented: $showingAddActivity) {
+                    AddActivityView(activities: self.activities)
             }
         }
     }

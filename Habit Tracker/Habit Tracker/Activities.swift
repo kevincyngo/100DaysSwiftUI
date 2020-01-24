@@ -28,7 +28,6 @@ class Activities: ObservableObject {
                 return
             }
         }
-        
         self.items = []
     }
 }

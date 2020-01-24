@@ -22,13 +22,19 @@ struct AddActivityView: View {
                 TextField("Title", text:$title)
                 TextField("Description",text:$description)
             }
-        .navigationBarTitle("Add new activity")
-        .navigationBarItems(trailing:
-            Button("Submit") {
-                let item = Activity(title: self.title, description: self.description)
-                self.activities.items.append(item)
-                self.presentationMode.wrappedValue.dismiss()
-        })
+            .navigationBarTitle("Add new activity")
+            .navigationBarItems(
+                leading: Button("Cancel") {
+                    self.presentationMode.wrappedValue.dismiss()
+                }.font(.title).padding(),
+                trailing: Button("Submit") {
+                    if self.title != "" && self.description != "" {
+                        let item = Activity(title: self.title, description: self.description)
+                        self.activities.items.append(item)
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                    
+                }.font(.title).padding())
         }
     }
 }

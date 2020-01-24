@@ -67,7 +67,6 @@
 				F0842F4723D950C200BCCCD9 /* Activity.swift */,
 				F0842F4923D950CA00BCCCD9 /* Activities.swift */,
 				F0842F4B23D9556B00BCCCD9 /* Views */,
-				F0842F5023D957FD00BCCCD9 /* Model */,
 				F0842F3323D9509000BCCCD9 /* AppDelegate.swift */,
 				F0842F3523D9509000BCCCD9 /* SceneDelegate.swift */,
 				F0842F3923D9509200BCCCD9 /* Assets.xcassets */,
@@ -94,13 +93,6 @@
 				F0842F4E23D956B900BCCCD9 /* DetailsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F0842F5023D957FD00BCCCD9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
