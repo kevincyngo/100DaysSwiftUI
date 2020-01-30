@@ -1,5 +1,5 @@
 //
-//  Movie+CoreDataClass.swift
+//  Country+CoreDataClass.swift
 //  CoreDataProject
 //
 //  Created by Kevin Ngo on 2020-01-29.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Movie)
-public class Movie: NSManagedObject {
+@objc(Country)
+public class Country: NSManagedObject {
 
 }

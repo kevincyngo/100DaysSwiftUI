@@ -14,11 +14,10 @@
 		F05A3F0D23E254C700ABC8E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A3F0C23E254C700ABC8E2 /* Assets.xcassets */; };
 		F05A3F1023E254C700ABC8E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A3F0F23E254C700ABC8E2 /* Preview Assets.xcassets */; };
 		F05A3F1323E254C700ABC8E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05A3F1123E254C700ABC8E2 /* LaunchScreen.storyboard */; };
-		F05A3F1C23E25A1100ABC8E2 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1A23E25A1100ABC8E2 /* Movie+CoreDataClass.swift */; };
-		F05A3F1D23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1B23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift */; };
-		F05A3F2023E2683000ABC8E2 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1E23E2683000ABC8E2 /* Singer+CoreDataClass.swift */; };
-		F05A3F2123E2683000ABC8E2 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1F23E2683000ABC8E2 /* Singer+CoreDataProperties.swift */; };
-		F05A3F2323E2689A00ABC8E2 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F2223E2689A00ABC8E2 /* FilteredList.swift */; };
+		F05A3F2823E2717000ABC8E2 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F2423E2717000ABC8E2 /* Country+CoreDataClass.swift */; };
+		F05A3F2923E2717000ABC8E2 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F2523E2717000ABC8E2 /* Country+CoreDataProperties.swift */; };
+		F05A3F2A23E2717000ABC8E2 /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F2623E2717000ABC8E2 /* Candy+CoreDataClass.swift */; };
+		F05A3F2B23E2717000ABC8E2 /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F2723E2717000ABC8E2 /* Candy+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +30,10 @@
 		F05A3F0F23E254C700ABC8E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F05A3F1223E254C700ABC8E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F05A3F1423E254C700ABC8E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F05A3F1A23E25A1100ABC8E2 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F05A3F1B23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F05A3F1E23E2683000ABC8E2 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F05A3F1F23E2683000ABC8E2 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F05A3F2223E2689A00ABC8E2 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
+		F05A3F2423E2717000ABC8E2 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F05A3F2523E2717000ABC8E2 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F05A3F2623E2717000ABC8E2 /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F05A3F2723E2717000ABC8E2 /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +50,10 @@
 		F05A3EF723E254C500ABC8E2 = {
 			isa = PBXGroup;
 			children = (
-				F05A3F1E23E2683000ABC8E2 /* Singer+CoreDataClass.swift */,
-				F05A3F1F23E2683000ABC8E2 /* Singer+CoreDataProperties.swift */,
-				F05A3F1A23E25A1100ABC8E2 /* Movie+CoreDataClass.swift */,
-				F05A3F1B23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift */,
+				F05A3F2423E2717000ABC8E2 /* Country+CoreDataClass.swift */,
+				F05A3F2523E2717000ABC8E2 /* Country+CoreDataProperties.swift */,
+				F05A3F2623E2717000ABC8E2 /* Candy+CoreDataClass.swift */,
+				F05A3F2723E2717000ABC8E2 /* Candy+CoreDataProperties.swift */,
 				F05A3F0223E254C500ABC8E2 /* CoreDataProject */,
 				F05A3F0123E254C500ABC8E2 /* Products */,
 			);
@@ -75,7 +73,6 @@
 				F05A3F0323E254C500ABC8E2 /* AppDelegate.swift */,
 				F05A3F0523E254C500ABC8E2 /* SceneDelegate.swift */,
 				F05A3F0A23E254C500ABC8E2 /* ContentView.swift */,
-				F05A3F2223E2689A00ABC8E2 /* FilteredList.swift */,
 				F05A3F0C23E254C700ABC8E2 /* Assets.xcassets */,
 				F05A3F1123E254C700ABC8E2 /* LaunchScreen.storyboard */,
 				F05A3F1423E254C700ABC8E2 /* Info.plist */,
@@ -164,15 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F05A3F2023E2683000ABC8E2 /* Singer+CoreDataClass.swift in Sources */,
 				F05A3F0423E254C500ABC8E2 /* AppDelegate.swift in Sources */,
-				F05A3F2323E2689A00ABC8E2 /* FilteredList.swift in Sources */,
 				F05A3F0623E254C500ABC8E2 /* SceneDelegate.swift in Sources */,
 				F05A3F0B23E254C500ABC8E2 /* ContentView.swift in Sources */,
-				F05A3F1C23E25A1100ABC8E2 /* Movie+CoreDataClass.swift in Sources */,
-				F05A3F2123E2683000ABC8E2 /* Singer+CoreDataProperties.swift in Sources */,
-				F05A3F1D23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift in Sources */,
+				F05A3F2B23E2717000ABC8E2 /* Candy+CoreDataProperties.swift in Sources */,
+				F05A3F2923E2717000ABC8E2 /* Country+CoreDataProperties.swift in Sources */,
+				F05A3F2823E2717000ABC8E2 /* Country+CoreDataClass.swift in Sources */,
 				F05A3F0923E254C500ABC8E2 /* CoreDataProject.xcdatamodeld in Sources */,
+				F05A3F2A23E2717000ABC8E2 /* Candy+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
