@@ -16,6 +16,9 @@
 		F05A3F1323E254C700ABC8E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05A3F1123E254C700ABC8E2 /* LaunchScreen.storyboard */; };
 		F05A3F1C23E25A1100ABC8E2 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1A23E25A1100ABC8E2 /* Movie+CoreDataClass.swift */; };
 		F05A3F1D23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1B23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift */; };
+		F05A3F2023E2683000ABC8E2 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1E23E2683000ABC8E2 /* Singer+CoreDataClass.swift */; };
+		F05A3F2123E2683000ABC8E2 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F1F23E2683000ABC8E2 /* Singer+CoreDataProperties.swift */; };
+		F05A3F2323E2689A00ABC8E2 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A3F2223E2689A00ABC8E2 /* FilteredList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		F05A3F1423E254C700ABC8E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F05A3F1A23E25A1100ABC8E2 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F05A3F1B23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F05A3F1E23E2683000ABC8E2 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F05A3F1F23E2683000ABC8E2 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F05A3F2223E2689A00ABC8E2 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,8 @@
 		F05A3EF723E254C500ABC8E2 = {
 			isa = PBXGroup;
 			children = (
+				F05A3F1E23E2683000ABC8E2 /* Singer+CoreDataClass.swift */,
+				F05A3F1F23E2683000ABC8E2 /* Singer+CoreDataProperties.swift */,
 				F05A3F1A23E25A1100ABC8E2 /* Movie+CoreDataClass.swift */,
 				F05A3F1B23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift */,
 				F05A3F0223E254C500ABC8E2 /* CoreDataProject */,
@@ -67,6 +75,7 @@
 				F05A3F0323E254C500ABC8E2 /* AppDelegate.swift */,
 				F05A3F0523E254C500ABC8E2 /* SceneDelegate.swift */,
 				F05A3F0A23E254C500ABC8E2 /* ContentView.swift */,
+				F05A3F2223E2689A00ABC8E2 /* FilteredList.swift */,
 				F05A3F0C23E254C700ABC8E2 /* Assets.xcassets */,
 				F05A3F1123E254C700ABC8E2 /* LaunchScreen.storyboard */,
 				F05A3F1423E254C700ABC8E2 /* Info.plist */,
@@ -155,10 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05A3F2023E2683000ABC8E2 /* Singer+CoreDataClass.swift in Sources */,
 				F05A3F0423E254C500ABC8E2 /* AppDelegate.swift in Sources */,
+				F05A3F2323E2689A00ABC8E2 /* FilteredList.swift in Sources */,
 				F05A3F0623E254C500ABC8E2 /* SceneDelegate.swift in Sources */,
 				F05A3F0B23E254C500ABC8E2 /* ContentView.swift in Sources */,
 				F05A3F1C23E25A1100ABC8E2 /* Movie+CoreDataClass.swift in Sources */,
+				F05A3F2123E2683000ABC8E2 /* Singer+CoreDataProperties.swift in Sources */,
 				F05A3F1D23E25A1100ABC8E2 /* Movie+CoreDataProperties.swift in Sources */,
 				F05A3F0923E254C500ABC8E2 /* CoreDataProject.xcdatamodeld in Sources */,
 			);
