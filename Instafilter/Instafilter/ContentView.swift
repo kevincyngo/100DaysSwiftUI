@@ -13,11 +13,17 @@ import CoreImage.CIFilterBuiltins
 struct ContentView: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
+    @State private var filterRadius = 0.5
+    @State private var filterScale = 0.5
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     @State private var showingFilterSheet = false
     @State private var processedImage: UIImage?
+    
+    @State private var selectedFilter: String = "Sepia Tone"
+    
+    @State private var showingErrorMessage = false
     
     let context = CIContext()
     
@@ -60,6 +66,22 @@ struct ContentView: View {
             }
         )
         
+        let radius = Binding<Double>(
+            get: { self.filterRadius },
+            set: {
+                self.filterRadius = $0
+                self.applyProcessing()
+            }
+        )
+
+        let scale = Binding<Double>(
+            get: { self.filterScale },
+            set: {
+                self.filterScale = $0
+                self.applyProcessing()
+            }
+        )
+        
         return NavigationView {
             VStack {
                 ZStack {
@@ -80,21 +102,50 @@ struct ContentView: View {
                     self.showingImagePicker = true
                 }
 
-                HStack {
-                    Text("Intensity")
-                    Slider(value: intensity)
-                }.padding(.vertical)
+                VStack {
+                    if currentFilter.inputKeys.contains(kCIInputIntensityKey) {
+                        HStack {
+                            Text("Intensity")
+                            Slider(value: intensity)
+                        }
+                    }
+
+                    if currentFilter.inputKeys.contains(kCIInputRadiusKey) {
+                        HStack {
+                            ZStack(alignment: .leading) {
+                                Text("Intensity").opacity(0) // force same width
+                                Text("Radius")
+                            }
+                            Slider(value: radius)
+                        }
+                    }
+
+                    if currentFilter.inputKeys.contains(kCIInputScaleKey) {
+                        HStack {
+                            ZStack(alignment: .leading) {
+                                Text("Intensity").opacity(0) // force same width
+                                Text("Scale")
+                            }
+                            Slider(value: scale)
+                        }
+                    }
+                }
+                .padding(.vertical)
+                
 
                 HStack {
-                    Button("Change Filter") {
-                        // change filter
+                    Button("\(selectedFilter)") {
                         self.showingFilterSheet = true
                     }
 
                     Spacer()
 
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.showingErrorMessage = true
+                            return
+                            
+                        }
 
                         let imageSaver = ImageSaver()
 
@@ -117,15 +168,36 @@ struct ContentView: View {
             }
             .actionSheet(isPresented: $showingFilterSheet) {
                 ActionSheet(title: Text("Select a filter"), buttons: [
-                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
-                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
-                    .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
-                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
-                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
-                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
-                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                    .default(Text("Crystallize")) {
+                        self.setFilter(CIFilter.crystallize())
+                        self.selectedFilter = "Crystallize"
+                    },
+                    .default(Text("Edges")) {
+                        self.setFilter(CIFilter.edges())
+                        self.selectedFilter = "Edges"
+                    },
+                    .default(Text("Gaussian Blur")) {
+                        self.selectedFilter = "Gaussian Blur"
+                        self.setFilter(CIFilter.gaussianBlur()) },
+                    .default(Text("Pixellate")) {
+                        self.selectedFilter = "Pixellate"
+                        self.setFilter(CIFilter.pixellate()) },
+                    .default(Text("Sepia Tone")) {
+                        self.selectedFilter = "Sepia Tone"
+                        self.setFilter(CIFilter.sepiaTone()) },
+                    .default(Text("Unsharp Mask")) {
+                        self.selectedFilter = "Unsharp Mask"
+                        self.setFilter(CIFilter.unsharpMask()) },
+                    .default(Text("Vignette")) {
+                        self.selectedFilter = "Vignette"
+                        self.setFilter(CIFilter.vignette()) },
                     .cancel()
                 ])
+            }
+            .alert(isPresented: $showingErrorMessage) {
+                Alert(title: Text("Error cannot save"),
+                      message: Text("There is no image to save."),
+                      dismissButton: .default(Text("Got it!")))
             }
         }
     }
