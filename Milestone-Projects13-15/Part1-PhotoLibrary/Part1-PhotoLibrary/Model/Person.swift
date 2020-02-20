@@ -13,6 +13,10 @@ struct Person: Codable, Identifiable {
     var name: String
     var imagePath: String?
 
+    var locationRecorded = false
+    var latitude: Double = 0
+    var longitude: Double = 0
+    
     /// image is image data in any format
     mutating func setImage(image: Data) {
         imagePath = ImageUtils().setImage(image: image)

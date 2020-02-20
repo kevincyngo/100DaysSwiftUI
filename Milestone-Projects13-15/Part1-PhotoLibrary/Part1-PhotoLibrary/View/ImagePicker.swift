@@ -8,9 +8,19 @@
 
 import SwiftUI
 
+enum ImageSourceType {
+    case library, camera
+}
+
 struct ImagePicker {
     @Environment(\.presentationMode) var presentationMode
     @Binding var image: UIImage?
+
+    var sourceType: ImageSourceType = .library
+
+    static func isCameraAvailable() -> Bool {
+        return UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
 }
 
 extension ImagePicker: UIViewControllerRepresentable {
@@ -19,6 +29,18 @@ extension ImagePicker: UIViewControllerRepresentable {
     func makeUIViewController(context: Self.Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        switch sourceType {
+        case .library:
+            picker.sourceType = .photoLibrary
+        case .camera:
+            // camera only if available, otherwise default to photo library
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.sourceType = .camera
+            }
+            else {
+                picker.sourceType = .photoLibrary
+            }
+        }
         return picker
     }
 

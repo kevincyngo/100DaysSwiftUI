@@ -19,10 +19,15 @@ struct AddContact: View {
     @State private var uiImage: UIImage?
     @State private var image: Image?
 
-    @State private var showingEmptyNameAlert = false
+    @State private var showingErrorAlert = false
+    @State private var errorAlertMessage = ""
 
     // monitor keyboard events to allow scrolling when it appears
     @ObservedObject private var keyboard = KeyboardResponder()
+
+    @State private var imageSourceType: ImageSourceType = .library
+
+    private let locationFetcher = LocationFetcher()
 
     var body: some View {
         NavigationView {
@@ -40,10 +45,18 @@ struct AddContact: View {
                                                                    dash: [5, 5]))
                             .scaledToFit()
                     }
-                    Button("Select...") {
-                        self.showingImagePicker = true
+                    HStack {
+                        // two buttons in the same row would result in both being
+                        // considered tapped when the row is tapped: use text instead
+                        Text("Take new...")
+                            .onTapGesture(perform: takePicture)
+
+                        Spacer()
+
+                        Text("Select existing...")
+                            .onTapGesture(perform: selectPhoto)
                     }
-                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color.accentColor)
                 }
                 Section(header: Text("Name")) {
                     TextField("Name", text: $name)
@@ -52,10 +65,10 @@ struct AddContact: View {
             // add space for the keyboard
             .padding(.bottom, keyboard.currentHeight)
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                ImagePicker(image: self.$uiImage)
+                ImagePicker(image: self.$uiImage, sourceType: self.imageSourceType)
             }
-            .alert(isPresented: $showingEmptyNameAlert, content: {
-                Alert(title: Text("Please provide a name"))
+            .alert(isPresented: $showingErrorAlert, content: {
+                Alert(title: Text(errorAlertMessage))
             })
             .navigationBarTitle(Text("Add contact"), displayMode: .inline)
             .navigationBarItems(trailing:
@@ -63,6 +76,9 @@ struct AddContact: View {
                        label: { Text("Add").padding(15) }
                 )
             )
+            .onAppear() {
+                self.locationFetcher.start()
+            }
         }
     }
 
@@ -71,9 +87,26 @@ struct AddContact: View {
         self.image = Image(uiImage: uiImage)
     }
 
+    func takePicture() {
+        if ImagePicker.isCameraAvailable() {
+            self.imageSourceType = .camera
+            self.showingImagePicker = true
+        }
+        else {
+            self.errorAlertMessage = "Camera is not available"
+            self.showingErrorAlert = true
+        }
+    }
+
+    func selectPhoto() {
+        self.imageSourceType = .library
+        self.showingImagePicker = true
+    }
+
     func addContact() {
         guard !self.name.isEmpty else {
-            showingEmptyNameAlert = true
+            errorAlertMessage = "Please provide a name"
+            showingErrorAlert = true
             return
         }
 
@@ -83,6 +116,15 @@ struct AddContact: View {
             if let jpegData = uiImage.jpegData(compressionQuality: 0.8) {
                 person.setImage(image: jpegData)
             }
+        }
+
+        if let location = self.locationFetcher.lastKnownLocation {
+            person.latitude = location.latitude
+            person.longitude = location.longitude
+            person.locationRecorded = true
+        }
+        else {
+            person.locationRecorded = false
         }
 
         self.persons.add(person: person)

@@ -24,6 +24,8 @@
 		F05A40A223FCE9F900ABC8E2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A40A123FCE9F900ABC8E2 /* DetailView.swift */; };
 		F05A40A423FCEA0500ABC8E2 /* AddContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A40A323FCEA0500ABC8E2 /* AddContact.swift */; };
 		F05A40A623FCEC9300ABC8E2 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A40A523FCEC9300ABC8E2 /* KeyboardResponder.swift */; };
+		F05A40C923FE405D00ABC8E2 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A40C823FE405D00ABC8E2 /* LocationFetcher.swift */; };
+		F05A40CB23FE440D00ABC8E2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A40CA23FE440D00ABC8E2 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		F05A40A123FCE9F900ABC8E2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F05A40A323FCEA0500ABC8E2 /* AddContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContact.swift; sourceTree = "<group>"; };
 		F05A40A523FCEC9300ABC8E2 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		F05A40C823FE405D00ABC8E2 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		F05A40CA23FE440D00ABC8E2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		F05A407723FCC92500ABC8E2 /* Part1-PhotoLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F05A40C723FE404700ABC8E2 /* LocationFetcher */,
 				F05A409623FCCC1400ABC8E2 /* Base */,
 				F05A408F23FCCB1100ABC8E2 /* Model */,
 				F05A409523FCCC0100ABC8E2 /* View */,
@@ -126,6 +131,7 @@
 				F05A40A123FCE9F900ABC8E2 /* DetailView.swift */,
 				F05A40A523FCEC9300ABC8E2 /* KeyboardResponder.swift */,
 				F05A40A323FCEA0500ABC8E2 /* AddContact.swift */,
+				F05A40CA23FE440D00ABC8E2 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +144,14 @@
 				F05A408623FCC92700ABC8E2 /* LaunchScreen.storyboard */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F05A40C723FE404700ABC8E2 /* LocationFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				F05A40C823FE405D00ABC8E2 /* LocationFetcher.swift */,
+			);
+			path = LocationFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F05A409823FCCD0500ABC8E2 /* CoreDataPersons.swift in Sources */,
+				F05A40CB23FE440D00ABC8E2 /* MapView.swift in Sources */,
 				F05A40A223FCE9F900ABC8E2 /* DetailView.swift in Sources */,
+				F05A40C923FE405D00ABC8E2 /* LocationFetcher.swift in Sources */,
 				F05A407E23FCC92500ABC8E2 /* DataModel.xcdatamodeld in Sources */,
 				F05A40A423FCEA0500ABC8E2 /* AddContact.swift in Sources */,
 				F05A409C23FCCF3300ABC8E2 /* ImageUtils.swift in Sources */,

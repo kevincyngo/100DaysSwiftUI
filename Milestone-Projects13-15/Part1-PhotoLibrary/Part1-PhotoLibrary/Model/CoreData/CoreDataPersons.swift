@@ -63,7 +63,6 @@ class CoreDataPersons: ObservableObject {
             }
         }
     }
-
     private func loadSavedData() {
         let request = CoreDataPerson.createFetchRequest()
         let sort = NSSortDescriptor(key: "internalName", ascending: true)
@@ -74,21 +73,49 @@ class CoreDataPersons: ObservableObject {
 
             // fill in "all" array
             for item in items {
-
-                let id = item.id ?? UUID()
-                // corupted data
-                if item.id == nil {
-                    item.id = id
-                    saveContext()
-                }
-
-                let person = Person(id: id, name: item.name, imagePath: item.imagePath)
+                let person = buildPerson(cdPerson: item)
                 all.append(person)
             }
         } catch {
             print("Fetch failed")
         }
     }
+
+    private func buildPerson(cdPerson: CoreDataPerson) -> Person {
+        let id = cdPerson.id ?? UUID()
+
+        // in case there is corrupted data
+        if cdPerson.id == nil {
+            cdPerson.id = id
+            saveContext()
+        }
+
+        let person = Person(id: id,
+                            name: cdPerson.name,
+                            imagePath: cdPerson.imagePath,
+                            locationRecorded: cdPerson.locationRecorded,
+                            latitude: cdPerson.latitude,
+                            longitude: cdPerson.longitude)
+
+        return person
+    }
+
+    private func buildCoreDataPerson(person: Person) -> CoreDataPerson {
+        let cdPerson = CoreDataPerson(context: container.viewContext)
+        cdPerson.id = person.id
+        copyPersonAttributes(from: person, to: cdPerson)
+
+        return cdPerson
+    }
+
+    private func copyPersonAttributes(from person: Person, to cdPerson: CoreDataPerson) {
+        cdPerson.name = person.name
+        cdPerson.imagePath = person.imagePath
+        cdPerson.locationRecorded = person.locationRecorded
+        cdPerson.latitude = person.latitude
+        cdPerson.longitude = person.longitude
+    }
+
 
     private func saveContext() {
         if container.viewContext.hasChanges {

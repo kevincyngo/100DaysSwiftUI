@@ -17,12 +17,12 @@ extension CoreDataPerson {
         return NSFetchRequest<CoreDataPerson>(entityName: "CoreDataPerson")
     }
 
-    
-    
-
     @NSManaged public var id: UUID?
     @NSManaged public var imagePath: String?
     @NSManaged public var internalName: String?
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
+    @NSManaged public var locationRecorded: Bool
     
     public var name: String {
         get {
