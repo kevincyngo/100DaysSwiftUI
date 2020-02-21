@@ -1,0 +1,54 @@
+//
+//  Prospect.swift
+//  HotProspects
+//
+//  Created by Kevin Ngo on 2020-02-20.
+//  Copyright © 2020 Kevin Ngo. All rights reserved.
+//
+
+import Foundation
+
+class Prospect: Identifiable, Codable {
+    let id = UUID()
+    var name = "Anonymous"
+    var emailAddress = ""
+    
+    //fileprivate - means this property can only be used by code inside of the current file
+    //fileprivate(set) - means this property can be read from anywhere, but only written from the current file
+    //this makes this property safer and can only be set by this file (i.e. by toggle() function)
+    fileprivate(set) var isContacted = false
+
+}
+
+class Prospects: ObservableObject {
+    @Published private(set) var people: [Prospect]
+    static let saveKey = "SavedData"
+    init() {
+        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
+            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
+                self.people = decoded
+                return
+            }
+        }
+        
+        self.people = []
+    }
+    
+    private func save() {
+        if let encoded = try? JSONEncoder().encode(people) {
+            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+        }
+    }
+    
+    func toggle(_ prospect: Prospect) {
+        objectWillChange.send()
+        prospect.isContacted.toggle()
+        save()
+    }
+    
+    func add(_ prospect: Prospect) {
+        people.append(prospect)
+        save()
+    }
+    
+}
