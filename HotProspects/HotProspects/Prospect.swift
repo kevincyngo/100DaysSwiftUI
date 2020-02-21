@@ -12,7 +12,8 @@ class Prospect: Identifiable, Codable {
     let id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
-    
+    // Challenge 3
+    var date = Date()
     //fileprivate - means this property can only be used by code inside of the current file
     //fileprivate(set) - means this property can be read from anywhere, but only written from the current file
     //this makes this property safer and can only be set by this file (i.e. by toggle() function)
@@ -23,6 +24,7 @@ class Prospect: Identifiable, Codable {
 class Prospects: ObservableObject {
     @Published private(set) var people: [Prospect]
     static let saveKey = "SavedData"
+    
     init() {
         // Challenge 2
         self.people = []
