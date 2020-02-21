@@ -48,7 +48,7 @@ struct ProspectsView: View {
                     HStack {
                         //challenge 1
                         if self.filter == .none {
-                            Image(systemName: prospect.isContact ? "envelope" : "envelope.badge")
+                            Image(systemName: prospect.isContacted ? "envelope" : "envelope.badge")
                         }
                         VStack(alignment: .leading) {
                             Text(prospect.name)
