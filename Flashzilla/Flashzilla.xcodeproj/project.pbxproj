@@ -16,6 +16,15 @@
 		F0E370DA240363B6000B5E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E370D8240363B6000B5E07 /* LaunchScreen.storyboard */; };
 		F0E370E324036CDA000B5E07 /* GestureIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370E224036CDA000B5E07 /* GestureIntroduction.swift */; };
 		F0E370E524037084000B5E07 /* VibrationsWithCoreHaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370E424037084000B5E07 /* VibrationsWithCoreHaptics.swift */; };
+		F0E370E724038B51000B5E07 /* DisableInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370E624038B51000B5E07 /* DisableInteractions.swift */; };
+		F0E370E924039151000B5E07 /* TriggerEventsUsingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370E824039151000B5E07 /* TriggerEventsUsingTimer.swift */; };
+		F0E370EB240396E7000B5E07 /* NotificationCenterMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370EA240396E7000B5E07 /* NotificationCenterMessages.swift */; };
+		F0E370ED24039A0F000B5E07 /* SupprtingAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370EC24039A0F000B5E07 /* SupprtingAccessibility.swift */; };
+		F0E370EF24039A9C000B5E07 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370EE24039A9C000B5E07 /* Card.swift */; };
+		F0E370F124039C83000B5E07 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370F024039C83000B5E07 /* CardView.swift */; };
+		F0E370F52404C07D000B5E07 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370F42404C07D000B5E07 /* EditCard.swift */; };
+		F0E370F72404C13B000B5E07 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370F62404C13B000B5E07 /* Haptics.swift */; };
+		F0E370F92404C151000B5E07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E370F82404C151000B5E07 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		F0E370DB240363B6000B5E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0E370E224036CDA000B5E07 /* GestureIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureIntroduction.swift; sourceTree = "<group>"; };
 		F0E370E424037084000B5E07 /* VibrationsWithCoreHaptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationsWithCoreHaptics.swift; sourceTree = "<group>"; };
+		F0E370E624038B51000B5E07 /* DisableInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableInteractions.swift; sourceTree = "<group>"; };
+		F0E370E824039151000B5E07 /* TriggerEventsUsingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerEventsUsingTimer.swift; sourceTree = "<group>"; };
+		F0E370EA240396E7000B5E07 /* NotificationCenterMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterMessages.swift; sourceTree = "<group>"; };
+		F0E370EC24039A0F000B5E07 /* SupprtingAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupprtingAccessibility.swift; sourceTree = "<group>"; };
+		F0E370EE24039A9C000B5E07 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F0E370F024039C83000B5E07 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F0E370F42404C07D000B5E07 /* EditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
+		F0E370F62404C13B000B5E07 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		F0E370F82404C151000B5E07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +81,11 @@
 			isa = PBXGroup;
 			children = (
 				F0E370E124036812000B5E07 /* Introduction */,
+				F0E370FA2404C22A000B5E07 /* Views */,
 				F0E370CA240363B3000B5E07 /* AppDelegate.swift */,
 				F0E370CC240363B3000B5E07 /* SceneDelegate.swift */,
-				F0E370D1240363B3000B5E07 /* ContentView.swift */,
+				F0E370F62404C13B000B5E07 /* Haptics.swift */,
+				F0E370EE24039A9C000B5E07 /* Card.swift */,
 				F0E370D3240363B6000B5E07 /* Assets.xcassets */,
 				F0E370D8240363B6000B5E07 /* LaunchScreen.storyboard */,
 				F0E370DB240363B6000B5E07 /* Info.plist */,
@@ -88,8 +108,23 @@
 			children = (
 				F0E370E224036CDA000B5E07 /* GestureIntroduction.swift */,
 				F0E370E424037084000B5E07 /* VibrationsWithCoreHaptics.swift */,
+				F0E370EA240396E7000B5E07 /* NotificationCenterMessages.swift */,
+				F0E370EC24039A0F000B5E07 /* SupprtingAccessibility.swift */,
+				F0E370E624038B51000B5E07 /* DisableInteractions.swift */,
+				F0E370E824039151000B5E07 /* TriggerEventsUsingTimer.swift */,
 			);
 			path = Introduction;
+			sourceTree = "<group>";
+		};
+		F0E370FA2404C22A000B5E07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0E370D1240363B3000B5E07 /* ContentView.swift */,
+				F0E370F42404C07D000B5E07 /* EditCard.swift */,
+				F0E370F024039C83000B5E07 /* CardView.swift */,
+				F0E370F82404C151000B5E07 /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,12 +198,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E370F92404C151000B5E07 /* SettingsView.swift in Sources */,
+				F0E370F72404C13B000B5E07 /* Haptics.swift in Sources */,
+				F0E370E924039151000B5E07 /* TriggerEventsUsingTimer.swift in Sources */,
+				F0E370ED24039A0F000B5E07 /* SupprtingAccessibility.swift in Sources */,
 				F0E370D0240363B3000B5E07 /* Flashzilla.xcdatamodeld in Sources */,
+				F0E370F52404C07D000B5E07 /* EditCard.swift in Sources */,
 				F0E370E324036CDA000B5E07 /* GestureIntroduction.swift in Sources */,
+				F0E370E724038B51000B5E07 /* DisableInteractions.swift in Sources */,
 				F0E370E524037084000B5E07 /* VibrationsWithCoreHaptics.swift in Sources */,
 				F0E370CB240363B3000B5E07 /* AppDelegate.swift in Sources */,
 				F0E370D2240363B3000B5E07 /* ContentView.swift in Sources */,
+				F0E370EB240396E7000B5E07 /* NotificationCenterMessages.swift in Sources */,
 				F0E370CD240363B3000B5E07 /* SceneDelegate.swift in Sources */,
+				F0E370F124039C83000B5E07 /* CardView.swift in Sources */,
+				F0E370EF24039A9C000B5E07 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
