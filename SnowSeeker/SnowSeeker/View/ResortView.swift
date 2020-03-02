@@ -20,7 +20,8 @@ struct ResortView: View {
                 Image(decorative: resort.id)
                     .resizable()
                     .scaledToFit()
-                
+                Text("Photo Credits: \(resort.imageCredit)")
+                    .font(.caption)
                 Group {
                     HStack {
                         if sizeClass == .compact {
